@@ -1,0 +1,28 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+
+package test;
+
+service UserService {
+  rpc FindOne (UserById) returns (User) {}
+  rpc SaveUser (UserSave) returns (User) {}
+  rpc FindAll (google.protobuf.Empty) returns (Users) {}
+  rpc FindAllStream(stream google.protobuf.Empty) returns (stream Users) {}
+}
+
+message UserSave {
+  string name = 1;
+}
+
+message UserById {
+  int32 id = 1;
+}
+
+message User {
+  int32 id = 1;
+  string name = 2;
+}
+
+message Users {
+  repeated User users = 1;
+}

@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  app:
+    platform: linux/x86_64
+    container_name: test-grpc
+    image: nestjs-test-grpc
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "50051:50051"
+    networks:
+      - test-grpc
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+
+networks:
+  test-grpc:
+    external: true
