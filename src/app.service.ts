@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { User } from '../proto/build/service';
+import { User } from '../proto/build/proto/service';
 import { Observable, Subject } from 'rxjs';
 
 @Injectable()

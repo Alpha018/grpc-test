@@ -1,7 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
 import { GrpcMethod, GrpcStreamMethod } from '@nestjs/microservices';
-import { User, UserById, UserSave } from '../proto/build/service';
+import { User, UserById, UserSave } from '../proto/build/proto/service';
 import { Metadata, ServerDuplexStream, ServerUnaryCall } from '@grpc/grpc-js';
 import { Observable, Subject } from 'rxjs';
 
